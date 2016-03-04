@@ -1,4 +1,19 @@
 <p id="notice"><%= notice %></p>
+<div class="small-3 columns">
+  <br>
+</div>
+<div class="small-7 columns">
+  <h3>The weather is currently:</h3>
+  <p><strong>Latitude:</strong> <%= @forecast.lat %></p>
+  <p><strong>Longitude:</strong> <%= @forecast.lng %></p>
+  <h3>The weather is <strong><%= @weather.currently.summary %></strong> and <strong><%= @weather.currently.temperature %></strong> degrees</h3>
 
-<%= link_to 'Edit', edit_forecast_path(@forecast) %> |
-<%= link_to 'Back', forecasts_path %>
+  <br>
+
+  <%= link_to 'Edit', edit_forecast_path(@forecast) %> |
+  <%= link_to 'Back', forecasts_path %>
+
+</div>
+<div class="small-2 columns">
+  <br>
+</div>
