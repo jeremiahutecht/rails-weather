@@ -6,7 +6,7 @@
   <h3>The weather is currently:</h3>
   <p><strong>Latitude:</strong> <%= @forecast.lat %></p>
   <p><strong>Longitude:</strong> <%= @forecast.lng %></p>
-  <h3>The weather is <strong><%= @weather.currently.summary %></strong> and <strong><%= @weather.currently.temperature %></strong> degrees</h3>
+  <h3>The weather is <strong><%= @weather['currently']['summary'] %></strong> and <strong><%= @weather.currently.temperature %></strong> degrees</h3>
 
   <br>
 
