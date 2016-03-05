@@ -4,8 +4,9 @@ class GeoCode
   base_uri 'maps.googleapis.com/maps/api/'
 
   # Currently limited this zip, there is lots more that could be used
-  # attr_accessor :zip, :lat, :lng
+  attr_accessor :zip, :lat, :lng
 
+  # Storngly suspect the initialize method is flawed.
   def initialize(zip, lat, lng)
     self.zip = zip
     self.lat = lat
@@ -19,7 +20,7 @@ class GeoCode
   def self.find(zip)
     response = get("geocode/json?address=#{zip}&key=#{api_key}")
     if response.success?
-      self.new(response["lat"],["lng"])
+      self.new(response["lat"],response["lng"], response["zip"])
     else
       raise response.response
     end
