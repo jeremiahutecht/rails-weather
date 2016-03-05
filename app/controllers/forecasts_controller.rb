@@ -72,7 +72,8 @@ class ForecastsController < ApplicationController
     def forecast_params
       params.require(:forecast).permit(
       :lat,
-      :lng
+      :lng,
+      :zip
       )
     end
 end
