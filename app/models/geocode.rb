@@ -1,28 +1,30 @@
+require 'httparty'
+
 class GeoCode
   include HTTParty
-
-  base_uri 'maps.googleapis.com/maps/api/'
-
-  # Currently limited this zip, there is lots more that could be used
-  attr_accessor :zip, :lat, :lng
-
-  # Storngly suspect the initialize method is flawed.
-  def initialize(zip, lat, lng)
-    self.zip = zip
-    self.lat = lat
-    self.lng = lng
-  end
+  base_uri "maps.googleapis.com"
+  default_timeout 15 # 15 second hard timeout
 
   def api_key
     Rails.application.secrets.google_geocode_key
   end
 
-  def self.find(zip)
-    response = get("geocode/json?address=#{zip}&key=#{api_key}")
-    if response.success?
-      self.new(response["lat"],response["lng"], response["zip"])
-    else
-      raise response.response
+  def base_path
+    "/maps/api/geocode/"
+  end
+
+  def timeout_handler
+    begin
+      yield
+    rescue Net::OpenTimeout, Net::ReadTimeout
+      {}
+    end
+  end
+
+  def postal_code(postal, options = {})
+    handle_timeouts do
+      url = "#{base_path}json?address=#{postal}&key=#{api_key}"
+      self.class.get(url, options)["results"]["geometry"]["location"]["lat"]["lng"]
     end
   end
 end
