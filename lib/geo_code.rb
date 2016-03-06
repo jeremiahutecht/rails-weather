@@ -2,16 +2,14 @@ require 'httparty'
 
 class GeoCode
   include HTTParty
-  base_uri "maps.googleapis.com"
+  base_uri "maps.googleapis.com/maps/api/geocode/"
   default_timeout 15 # 15 second hard timeout
 
+# TODO: This works in development but needs to be done better
   def api_key
     Rails.application.secrets.google_geocode_key
   end
 
-  def base_path
-    "/maps/api/geocode/"
-  end
 
   def timeout_handler
     begin
@@ -21,9 +19,9 @@ class GeoCode
     end
   end
 
-  def postal_code(postal, options = {})
-    handle_timeouts do
-      url = "#{base_path}json?address=#{postal}&key=#{api_key}"
+  def postal_code(postal)
+    timeout_handler do
+      url = "json?address=#{postal}&key=#{api_key}"
       self.class.get(url, options)["results"]["geometry"]["location"]["lat"]["lng"]
     end
   end
