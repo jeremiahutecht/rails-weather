@@ -11,6 +11,7 @@ Just another weather app being used to build experience with UX and API's. Use t
 ## Future
 - Use Rails 5.0
 - Rebuild App without a db
+- Rebuild App to use a javascript call to Google GeoCode
 
 ## Process
 - [x] Get bare bones site cobbled together
