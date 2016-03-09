@@ -18,13 +18,13 @@ class GeoCode
 
   def self.postal_code(postal)
     url = "/json?address=#{postal}&key=#{api_key}"
-    self.get(url)["results"]
+    self.get(url)["results"].first
   end
 
   def self.assign_values(location_hash)
     parsed_response = JSON.parse(location_hash.to_json)
     puts "parsed_response: #{parsed_response.inspect}"
-    postcode_response = JSON.parse(location_hash.to_json)['geometry']
+    postcode_response = JSON.parse(location_hash.to_json)["geometry"]
     puts "postcode_response: #{postcode_response.inspect}"
     self.lat = postcode_response["location"]["lat"]
     self.lng = postcode_response["location"]["lng"]
