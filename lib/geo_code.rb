@@ -21,7 +21,7 @@ class GeoCode
   end
 
   def self.assign_values(location_hash)
-    postcode_response = location_hash["results"]["formatted_address"]["geometry"].first
+    postcode_response = location_hash.parsed_response["results"]["formatted_address"]["geometry"].first
     self.lat = postcode_response["geometry"]["lat"]
     self.lng = postcode_response["geometry"]["lng"]
     self.location = postcode_response["formatted_address"]
