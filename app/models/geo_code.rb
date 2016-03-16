@@ -1,10 +1,8 @@
-require "httparty"
-
 class GeoCode
   include HTTParty
   base_uri "https://maps.googleapis.com/maps/api/geocode/"
 
-  cattr_accessor :lat, :lng, :location
+  cattr_accessor :lat, :lng, :location, :postal
 
   def initialize
     location_hash = postal_code

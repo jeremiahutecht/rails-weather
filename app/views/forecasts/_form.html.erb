@@ -1,3 +1,11 @@
+<%= form_for GeoCode.new do |f| %>
+  <%= render "shared/errors", object: (@geocode) %>
+
+  <%= f.label :Zip_Code %>
+  <%= f.text_field :postal %>
+
+<% end %>
+
 <%= form_for(@forecast) do |f| %>
   <% if @forecast.errors.any? %>
     <div id="error_explanation">
@@ -10,7 +18,6 @@
       </ul>
     </div>
   <% end %>
-
   <%= f.label :LATITUDE %>
   <%= f.text_field :lat %>
 
