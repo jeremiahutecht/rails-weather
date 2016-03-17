@@ -4,6 +4,9 @@
 </div>
 <div class="small-7 columns">
   <h3>The weather is currently:</h3>
+  <p>
+    <strong>Zip Code:</strong> <%= @forecast.postal_code %>
+  </p>
   <p><strong>Latitude:</strong> <%= @forecast.lat %></p>
   <p><strong>Longitude:</strong> <%= @forecast.lng %></p>
   <h3>The weather is <strong><%= @weather['currently']['summary'] %></strong> and <strong><%= @weather.currently.temperature %></strong> degrees</h3>
