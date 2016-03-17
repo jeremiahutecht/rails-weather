@@ -73,7 +73,7 @@ class ForecastsController < ApplicationController
       params.require(:forecast).permit(
       :lat,
       :lng,
-      :zip
+      :postal_code
       )
     end
 end
