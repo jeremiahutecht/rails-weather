@@ -1,9 +1,12 @@
-<%= form_for GeoCode.new do |f| %>
+<%= form_for GeoCode.new  do |f| %>
   <%= render "shared/errors", object: (@geocode) %>
 
   <%= f.label :Zip_Code %>
   <%= f.text_field :postal %>
 
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %>
 
 <%= form_for(@forecast) do |f| %>

@@ -18,6 +18,10 @@ class ForecastsController < ApplicationController
     @forecast = Forecast.new
   end
 
+  def postalCode
+    GeoCode.new.postal_code(params[:postal])
+  end
+
   # GET /forecasts/1/edit
   def edit
   end
@@ -73,7 +77,7 @@ class ForecastsController < ApplicationController
       params.require(:forecast).permit(
       :lat,
       :lng,
-      :zip
+      :postal
       )
     end
 end
