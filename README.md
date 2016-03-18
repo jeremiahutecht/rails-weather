@@ -19,9 +19,9 @@ This code base is the "Quick and Dirty" implementation. Uses the Geocode gem. Th
 ## Process
 - [x] Get bare bones site cobbled together
 - [x] Verify Forecast.io API connectivity
-- [x] Style Output to be less potato
-  - [x] Mobile Styles
-  - [x] Form Styles
-  - [x] Structure CSS properly
+- [ ] Style Output to be less potato
+  - [ ] Mobile Styles
+  - [X] Form Styles
+  - [ ] Structure CSS properly
 - [x] Create Lookup Weather by Address
 
