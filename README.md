@@ -13,7 +13,7 @@ Just another weather app being used to build experience with UX and API's. Use t
 - Rebuild App without a db
 - Rebuild App to use a javascript call to Google GeoCode
 
-## Process
+## TODO
 - [x] Get bare bones site cobbled together
 - [x] Verify Forecast.io API connectivity
 - [x] Style Output to be less potato
@@ -22,3 +22,5 @@ Just another weather app being used to build experience with UX and API's. Use t
   - [x] Structure CSS properly
 - [ ] Create Lookup Weather by Address
  - [ ] Google Geocoding API
+- [ ] Handle Timeouts
+- [ ] Caching
