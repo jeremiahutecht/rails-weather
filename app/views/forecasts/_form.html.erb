@@ -1,11 +1,10 @@
-<%= form_for GeoCode.new  do |f| %>
-  <%= render "shared/errors", object: (@geocode) %>
+<%= form_tag geo_codes_path do %>
 
-  <%= f.label :Zip_Code %>
-  <%= f.text_field :postal %>
+  <%= label_tag "Zip Code" %>
+  <%= text_field_tag "geo_code[postal]" %>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= submit_tag %>
   </div>
 <% end %>
 
