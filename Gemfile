@@ -22,6 +22,9 @@ group :development, :test do
 end
 
 group :development do
+  gem "foreman"
+  gem "guard-livereload", require: false
+  gem "rack-livereload"
   gem "web-console", "~> 2.0"
   gem "spring"
 end
