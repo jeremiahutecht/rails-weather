@@ -1,14 +1,4 @@
-<%= form_tag geo_codes_path do %>
-
-  <%= label_tag "Zip Code" %>
-  <%= text_field_tag "geo_code[postal]" %>
-
-  <div class="actions">
-    <%= submit_tag %>
-  </div>
-<% end %>
-
-<!-- <%= form_for(@forecast) do |f| %>
+<%= form_for(@forecast) do |f| %>
   <% if @forecast.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@forecast.errors.count, "error") %> prohibited this forecast from being saved:</h2>
@@ -21,12 +11,10 @@
     </div>
   <% end %>
 
-  <%= f.label :LATITUDE %>
-  <%= f.text_field :lat %>
+  <%= f.label :Zip_Code %>
+  <%= f.text_field :postal_code %>
 
-  <%= f.label :LOGITUDE %>
-  <%= f.text_field :lng %>
   <div class="actions">
     <%= f.submit %>
   </div>
-<% end %> -->
+<% end %>

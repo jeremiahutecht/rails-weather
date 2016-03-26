@@ -9,8 +9,6 @@
     <thead>
       <tr>
         <th>Zip Code</th>
-        <th>Latitude</th>
-        <th>Longitude</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -19,8 +17,6 @@
       <% @forecasts.each do |forecast| %>
         <tr>
           <td><%= forecast.postal_code %></td>
-          <td><%= forecast.lat %></td>
-          <td><%= forecast.lng %></td>
           <td><%= link_to 'Show', forecast %></td>
           <td><%= link_to 'Edit', edit_forecast_path(forecast) %></td>
           <td><%= link_to 'Destroy', forecast, method: :delete, data: { confirm: 'Are you sure?' } %></td>
